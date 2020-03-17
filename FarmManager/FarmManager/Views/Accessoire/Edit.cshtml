@@ -1,0 +1,47 @@
+﻿@model FarmManager.Models.ViewModels.AccessoireVM
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(VM => VM.Animals)
+    @Html.HiddenFor(VM => VM.Accessoire.Id)
+    <div>
+        <h5>Naam : </h5>
+        @Html.EditorFor(VM => VM.Accessoire.Name)
+        @Html.ValidationMessageFor(VM => VM.Accessoire.Name)
+    </div>
+    <div>
+        <h5>Prijs : </h5>
+        @Html.EditorFor(VM => VM.Accessoire.Price)
+        @Html.ValidationMessageFor(VM => VM.Accessoire.Price)
+    </div>
+    <div>
+        <h5>ImageUrl : </h5>
+        @Html.EditorFor(VM => VM.Accessoire.ImageUrl)
+        @Html.ValidationMessageFor(VM => VM.Accessoire.ImageUrl)
+    </div>
+    <div>
+        <div>
+            <select name="AnimalId" class="animalSelect">
+                @foreach (var animal in Model.Animals)
+                {
+                    if (Model.Accessoire.Animal == animal.Id)
+                    {
+                        <option selected="selected" name="AnimalId" value="@animal.Id">@Html.DisplayFor(model => animal.Name)</option>
+                    }
+                    else
+                    {
+                        <option name="AnimalId" value="@animal.Id">@Html.DisplayFor(model => animal.Name)</option>
+                    }
+                }
+            </select>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Aanpassen" />
+        @Html.ActionLink("Terug naar accessoire lijst", "Index")
+    </div>
+}

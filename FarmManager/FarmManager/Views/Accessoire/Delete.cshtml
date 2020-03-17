@@ -1,0 +1,22 @@
+﻿@model FarmManager.Models.ViewModels.AccessoireVM
+
+@{
+    ViewBag.Title = "Accessoire verwijderen";
+}
+
+    <div>
+        <h3>Weet je zeker dat je @Model.Accessoire.Name wilt verwijderen?</h3>
+        <ul>
+            <li>€@Html.DisplayFor(VM => VM.Accessoire.Price)</li>
+            @if (Model.Accessoire.ImageUrl != null)
+            {
+                <li><img src="@Url.Content(Model.Accessoire.ImageUrl)" /></li>
+            }
+            <li>@Html.DisplayFor(VM => VM.Animals.Where(animal => animal.Id == Model.Accessoire.Animal).FirstOrDefault().Name)</li>
+        </ul>
+        @using (Html.BeginForm())
+        {
+            <input type="submit" value="Bevestigen" />
+        }
+        @Html.ActionLink("Terug naar beestjes lijst", "Index")
+    </div>

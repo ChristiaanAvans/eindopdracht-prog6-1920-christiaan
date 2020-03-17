@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[Type]
+(
+	[Name] VARCHAR(50) NOT NULL PRIMARY KEY
+)

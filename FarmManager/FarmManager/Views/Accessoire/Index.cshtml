@@ -1,0 +1,20 @@
+﻿@model List<FarmManager.Models.Domain.Accessoire>
+
+@{
+    ViewBag.Title = "Accessoire lijst";
+}
+
+<div>
+    @Html.ActionLink("Accessoire aanmaken", "Create")
+    <ul>
+        @foreach(var accessoire in Model)
+        {
+            <li>
+                @Html.DisplayFor(model => accessoire.Name) |
+                @Html.ActionLink("Details", "Details", new { accessoireId = accessoire.Id }) |
+                @Html.ActionLink("Aanpassen", "Edit", new { accessoireId = accessoire.Id }) | 
+                @Html.ActionLink("Verwijderen", "Delete", new { accessoireId = accessoire.Id })
+            </li>
+        }
+    </ul>
+</div>

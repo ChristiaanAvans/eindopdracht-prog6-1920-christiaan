@@ -1,0 +1,15 @@
+﻿INSERT INTO dbo.Animal (Name, TypeName, ImageUrl, Price) VALUES
+('Aap', 'Jungle', '/Content/Img/aap.png', 45),
+('Olifant', 'Jungle', '/Content/Img/olifant.png', 120),
+('Zebra', 'Jungle', '/Content/Img/zebra.png', 90),
+('Leeuw', 'Jungle', '/Content/Img/leeuw.png', 125),
+('Hond', 'Boerderij', '/Content/Img/doggo.png', 10),
+('Ezel', 'Boerderij', '/Content/Img/donkey.png', 30),
+('Koe', 'Boerderij', '/Content/Img/koe.png', 50),
+('Eend', 'Boerderij', '/Content/Img/duck.png', 25),
+('Kuiken', 'Boerderij', '/Content/Img/kuiken.png', 60),
+('Pinguïn', 'Sneeuw', '/Content/Img/pingwing.png', 150),
+('Ijsbeer', 'Sneeuw', '/Content/Img/ijsbeer.png', 155),
+('Zeehond', 'Sneeuw', '/Content/Img/zeehond.png', 85),
+('Kameel', 'Woestijn', '', 115),
+('Slang', 'Woestijn', '', 65);

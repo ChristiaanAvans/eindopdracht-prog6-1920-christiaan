@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[BookedAnimal]
+(
+	[Animal] INT NOT NULL, 
+    [Booking] INT NOT NULL,
+
+	CONSTRAINT PK_BookedAnimal_Ids PRIMARY KEY ([Animal], [Booking]),
+	CONSTRAINT FK_Animal_Id FOREIGN KEY ([Animal]) REFERENCES Animal ([Id]) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FK_AnimalBooking_Id FOREIGN KEY ([Booking]) REFERENCES Booking ([Id]) ON DELETE CASCADE ON UPDATE CASCADE
+)

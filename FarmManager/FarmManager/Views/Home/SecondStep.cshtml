@@ -1,0 +1,37 @@
+﻿@model FarmManager.Models.ViewModels.BookingVM
+
+@{
+    ViewBag.Title = "SecondStep";
+}
+
+    <div>
+        <div>
+            <p>Stap 1-----<b>Stap 2</b>-----Stap 3-----Stap 4</p>
+        </div>
+        <div>
+            <p>Accessoires Selecteren</p>
+            @using (Html.BeginForm())
+            {
+                <select name="AccessoireIds" multiple="multiple">
+                    @foreach (var accessoire in Model.Accessoires)
+                    {
+                        <option name="AccessoireId" value="@accessoire.Id">@accessoire.Name</option>
+                    }
+                </select>
+                <input type="submit" value="Verdergaan" />
+            }
+        </div>
+        <div>
+            <ul>
+                <li>Boekingsdatum : @Html.DisplayFor(model => model.Booking.BookingDate)</li>
+                <li>
+                    <ul>
+                        @foreach(var animal in Model.Booking.Animals)
+                        {
+                        <li>@Html.DisplayFor(model => animal.Name)</li>
+                        }
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>

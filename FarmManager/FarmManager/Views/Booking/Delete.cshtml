@@ -1,0 +1,16 @@
+﻿@model FarmManager.Models.Domain.Booking
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div>
+    <div>
+        <h3>Weet je zeker dat je de boeking van @Model.FirstName @Model.Insertion @Model.LastName op @Model.BookingDate wilt verwijderen?</h3>
+        @using (Html.BeginForm())
+        {
+            <input type="submit" value="Bevestigen" />
+            @Html.ActionLink("Terug naar de lijst", "Index")
+        }
+    </div>
+</div>

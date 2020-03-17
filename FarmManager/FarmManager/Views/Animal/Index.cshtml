@@ -1,0 +1,20 @@
+﻿@model List<FarmManager.Models.Domain.Animal>
+
+@{
+    ViewBag.Title = "Beestjes lijst";
+}
+
+    <div>
+        @Html.ActionLink("Beestje aanmaken", "Create")
+        <ul>
+            @foreach (var animal in Model)
+            {
+                <li>
+                    @Html.DisplayFor(model => animal.Name) | 
+                    @Html.ActionLink("Details", "Details", new { animalId = animal.Id }) | 
+                    @Html.ActionLink("Aanpassen", "Edit", new { animalId = animal.Id }) | 
+                    @Html.ActionLink("Verwijderen", "Delete", new { animalId = animal.Id })
+                </li>
+            }
+        </ul>
+    </div>

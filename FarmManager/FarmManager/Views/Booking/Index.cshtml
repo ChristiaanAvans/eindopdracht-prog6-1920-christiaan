@@ -1,0 +1,19 @@
+﻿@model List<FarmManager.Models.Domain.Booking>
+
+@{
+    ViewBag.Title = "Lijst van boekingen";
+}
+
+    <div>
+        <ul>
+            @foreach (var booking in Model)
+            {
+            <li>
+                @Html.DisplayFor(model => booking.BookingDate) voor 
+                @Html.DisplayFor(model => booking.FirstName) @Html.DisplayFor(model => booking.Insertion) @Html.DisplayFor(model => booking.LastName) |
+                @Html.ActionLink("Details", "Details", new { bookingId = booking.Id }) |
+                @Html.ActionLink("Verwijderen", "Delete", new { bookingId = booking.Id })
+            </li>
+            }
+        </ul>
+    </div>

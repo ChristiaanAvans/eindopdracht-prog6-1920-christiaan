@@ -1,0 +1,39 @@
+﻿@model FarmManager.Models.ViewModels.AnimalBookingVM
+
+@{
+    ViewBag.Title = "Beestjes selecteren";
+}
+
+<div>
+    <div>
+        <p><b>Stap 1</b>-----Stap 2-----Stap 3-----Stap 4</p>
+    </div>
+    <div>
+        <p>Beestjes Selecteren</p>
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(model => model.BookingDate)
+
+            <select name="AnimalIds" multiple="multiple">
+                @foreach (var animal in Model.Animals)
+                {
+                    if (Model.UnavailableAnimals.Contains(animal))
+                    {
+                        <option disabled="disabled" name="AnimalId" value="@animal.Id">@animal.Name</option>
+                    }
+                    else
+                    {
+                        <option name="AnimalId" value="@animal.Id">@animal.Name</option>
+                    }
+                }
+            </select>
+            @Html.ValidationMessageFor(model => model.AnimalIds)
+            <input type="submit" value="Verdergaan" />
+        }
+    </div>
+    <div>
+        <ul>
+            <li>Boekingsdatum : @Html.DisplayFor(model => model.BookingDate)</li>
+        </ul>
+    </div>
+</div>

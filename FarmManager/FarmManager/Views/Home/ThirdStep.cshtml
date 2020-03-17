@@ -1,0 +1,63 @@
+﻿@model FarmManager.Models.ViewModels.ContactInfoBookingVM
+
+@{
+    ViewBag.Title = "ThirdStep";
+}
+
+    <div>
+        <div>
+            <p>Stap 1-----Stap 2-----<b>Stap 3</b>-----Stap 4</p>
+        </div>
+        <div>
+            @using (Html.BeginForm())
+            {
+                <h2>ContactGegevens</h2>
+
+                <p>Voornaam : </p>
+                @Html.EditorFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+
+                <p>Tussenvoegsel : </p>
+                @Html.EditorFor(model => model.Insertion)
+
+                <p>Achternaam : </p>
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+
+                <p>Adres : </p>
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+
+                <p>E-mailadres</p>
+                @Html.EditorFor(model => model.Mail)
+                @Html.ValidationMessageFor(model => model.Mail)
+
+                <p>Telefoonnummer : </p>
+                @Html.EditorFor(model => model.PhoneNumber)
+                @Html.ValidationMessageFor(model => model.PhoneNumber)
+
+                <input type="submit" value="Verdergaan" />
+            }
+        </div>
+        <div>
+            <ul>
+                <li>Boekingsdatum : @Html.DisplayFor(model => model.Booking.BookingDate)</li>
+                <li>
+                    <ul>
+                        @foreach (var animal in Model.Booking.Animals)
+                        {
+                            <li>@Html.DisplayFor(model => animal.Name)</li>
+                        }
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        @foreach (var accessoire in Model.Booking.Accessoires)
+                        {
+                            <li>@Html.DisplayFor(model => accessoire.Name)</li>
+                        }
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>

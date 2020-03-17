@@ -1,0 +1,58 @@
+﻿@model FarmManager.Models.ViewModels.BookingVM
+
+@{
+    ViewBag.Title = "ForthStep";
+}
+
+    <div>
+        <div>
+            <p>Stap 1-----Stap 2-----Stap 3-----<b>Stap 4</b></p>
+        </div>
+        <div>
+            <h3>Boeking voor @Model.Booking.BookingDate</h3>
+            <div>
+                <h5>Contactgegevens : </h5>
+                <ul>
+                    <li>@Html.DisplayFor(VM => VM.Booking.FirstName)</li>
+                    <li>@Html.DisplayFor(VM => VM.Booking.Insertion)</li>
+                    <li>@Html.DisplayFor(VM => VM.Booking.LastName)</li>
+                    <li>@Html.DisplayFor(VM => VM.Booking.Address)</li>
+                    <li>@Html.DisplayFor(VM => VM.Booking.Mail)</li>
+                    <li>@Html.DisplayFor(VM => VM.Booking.PhoneNumber)</li>
+                </ul>
+            </div>
+            <div>
+                <h5>Beestjes : </h5>
+                <ul>
+                    @foreach(var animal in Model.Booking.Animals)
+                    {
+                        <li>@Html.DisplayFor(model => animal.Name) : €@Html.DisplayFor(model => animal.Price)</li>
+                    }
+                </ul>
+            </div>
+            <div>
+                <h5>Accessoires : </h5>
+                <ul>
+                    @foreach (var accessoire in Model.Booking.Accessoires)
+                    {
+                        <li>@Html.DisplayFor(model => accessoire.Name) : €@Html.DisplayFor(model => accessoire.Price)</li>
+                    }
+                </ul>
+            </div>
+            <div>
+                <h5>Kortingen : </h5>
+                <ul>
+                    @foreach(var discount in Model.Discounts)
+                    {
+                        <li>@Html.DisplayFor(model => discount.Key) : @Html.DisplayFor(model => discount.Value)%</li>
+                    }
+                </ul>
+            </div>
+            <h4>Totale korting : @Model.TotalDiscount%</h4>
+            <h4>Totaalbedrag : €@Model.TotalPrice</h4>
+            @using (Html.BeginForm())
+            {
+                <input type="submit" value="Boeking bevestigen" />
+            }
+        </div>
+    </div>

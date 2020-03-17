@@ -1,0 +1,16 @@
+﻿@model FarmManager.Models.Domain.Animal
+
+@{
+    ViewBag.Title = "Details beestje";
+}
+
+<div>
+    <h3>@Model.Name</h3>
+    <ul>
+        <li>€@Html.DisplayFor(animal => animal.Price)</li>
+        <li>@Html.DisplayFor(animal => animal.TypeName)</li>
+        <li><img src="@Url.Content(Model.ImageUrl)" /></li>
+    </ul>
+    @Html.ActionLink("Terug naar beestjes lijst", "Index")
+</div>
+

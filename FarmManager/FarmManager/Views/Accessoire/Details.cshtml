@@ -1,0 +1,19 @@
+﻿@model FarmManager.Models.ViewModels.AccessoireVM
+
+@{
+    ViewBag.Title = "Details accessoire";
+}
+
+    <div>
+        <h3>@Model.Accessoire.Name</h3>
+        <ul>
+            <li>@Html.DisplayFor(VM => VM.Accessoire.Price)</li>
+            @if (Model.Accessoire.ImageUrl != null)
+            {
+                <li><img src="@Url.Content(Model.Accessoire.ImageUrl)" /></li>
+            }
+            <li>@Html.DisplayFor(VM => VM.Animals.Where(animal => animal.Id == Model.Accessoire.Animal).FirstOrDefault().Name)</li>
+        </ul>
+        @Html.ActionLink("Terug naar beestjes lijst", "Index")
+    </div>
+

@@ -1,0 +1,45 @@
+﻿@model FarmManager.Models.ViewModels.AnimalVM
+
+@{
+    ViewBag.Title = "Beestje aanpassen";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(VM => VM.Animal.Id)
+    <div>
+        <h5>Naam : </h5>
+        @Html.EditorFor(VM => VM.Animal.Name)
+        @Html.ValidationMessageFor(VM => VM.Animal.Name)
+    </div>
+    <div>
+        <h5>Prijs : </h5>
+        @Html.EditorFor(VM => VM.Animal.Price)
+        @Html.ValidationMessageFor(VM => VM.Animal.Price)
+    </div>
+    <div>
+        <h5>ImageUrl : </h5>
+        @Html.EditorFor(VM => VM.Animal.ImageUrl)
+        @Html.ValidationMessageFor(VM => VM.Animal.ImageUrl)
+    </div>
+    <div>
+        <h5>Type : </h5>
+        <select name="ChosenAnimalType" class="animalSelect">
+            @foreach (var type in Model.AnimalTypes)
+            {
+                if (type.Equals(Model.Animal.TypeName))
+                {
+                    <option name="AnimalType" value="@type" selected="selected">@Html.DisplayFor(model => type)</option>
+                }
+                else
+                {
+                    <option name="AnimalType" value="@type">@Html.DisplayFor(model => type)</option>
+                }
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Aanpassen" />
+        @Html.ActionLink("Terug naar beestjes lijst", "Index")
+    </div>
+}

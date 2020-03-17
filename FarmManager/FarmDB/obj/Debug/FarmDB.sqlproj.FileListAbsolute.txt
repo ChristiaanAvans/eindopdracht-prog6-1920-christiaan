@@ -1,0 +1,6 @@
+C:\Users\dvatt\Documents\Huiswerk\Blok 6\Prog6\eindopdracht-prog6-1920-christiaan\FarmManager\FarmDB\bin\Debug\FarmDB.dacpac
+C:\Users\dvatt\Documents\Huiswerk\Blok 6\Prog6\eindopdracht-prog6-1920-christiaan\FarmManager\FarmDB\obj\Debug\FarmDB.sqlprojAssemblyReference.cache
+C:\Users\dvatt\Documents\Huiswerk\Blok 6\Prog6\eindopdracht-prog6-1920-christiaan\FarmManager\FarmDB\obj\Debug\FarmDB.dll
+C:\Users\dvatt\Documents\Huiswerk\Blok 6\Prog6\eindopdracht-prog6-1920-christiaan\FarmManager\FarmDB\obj\Debug\FarmDB.pdb
+C:\Users\dvatt\Documents\Huiswerk\Blok 6\Prog6\eindopdracht-prog6-1920-christiaan\FarmManager\FarmDB\bin\Debug\FarmDB.dll
+C:\Users\dvatt\Documents\Huiswerk\Blok 6\Prog6\eindopdracht-prog6-1920-christiaan\FarmManager\FarmDB\bin\Debug\FarmDB.pdb

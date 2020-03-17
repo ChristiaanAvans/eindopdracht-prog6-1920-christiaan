@@ -1,0 +1,15 @@
+﻿@model FarmManager.Models.ViewModels.DateBookingVM
+
+@{
+    ViewBag.Title = "Beestje boeken";
+}
+
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.EditorFor(VM => VM.BookingDate)
+            @Html.ValidationMessageFor(VM => VM.BookingDate)
+
+            <input type="submit" value="Doorgaan naar boekingsproces" />
+        }
+    </div>

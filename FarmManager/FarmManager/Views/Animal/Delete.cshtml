@@ -1,0 +1,21 @@
+﻿@model FarmManager.Models.Domain.Animal
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+    <div>
+        <h2>Weet je zeker dat je @Model.Name wilt verwijderen?</h2>
+        <ul>
+            <li>@Html.DisplayFor(animal => animal.Name)</li>
+            <li>€@Html.DisplayFor(animal => animal.Price)</li>
+            <li>@Html.DisplayFor(animal => animal.TypeName)</li>
+            <li><img src="@Url.Content(Model.ImageUrl)" /></li>
+        </ul>
+        @using (Html.BeginForm())
+        {
+            <input type="submit" value="Bevestigen" />
+            @Html.ActionLink("Terug naar beestjes lijst", "Index")
+        }
+    </div>
+
